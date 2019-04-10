@@ -23,7 +23,7 @@ var Queue = function() {
 
   someInstance.dequeue = function() {
     if(_.isEmpty(storage)){
-        return null;
+        return undefined;
     } else {
         var arr = Object.keys(storage);
         var minIndex = Math.min(...arr);
