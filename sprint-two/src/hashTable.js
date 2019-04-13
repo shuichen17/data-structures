@@ -7,6 +7,7 @@ var HashTable = function() {
 
 HashTable.prototype.insert = function(k, v) {
   var index = getIndexBelowMaxForKey(k, this._limit);
+//var index = 2;
   // if there isn't a bucket in the hash table at index, then we add a bucket
 // and add that tuple to the new bucket
   var bucket = [];
@@ -35,6 +36,7 @@ HashTable.prototype.insert = function(k, v) {
 };
 
 HashTable.prototype.retrieve = function(k) {
+ //var index = 2
   var index = getIndexBelowMaxForKey(k, this._limit);
   var array = this._storage.get(index)
   if(Array.isArray(array)){
@@ -59,6 +61,10 @@ HashTable.prototype.remove = function(k) {
 
 /*
  * Complexity: What is the time complexity of the above functions?
+insert: O(1)    // get index from hashTable is O(1) because it is same as get index from array.
+normally hashTable has buckets with index and in each bucket, there is only one tuple in bucket. 
+retrieve: O(1)  // same way 
+remove: O(1)     // same way
  */
 
 

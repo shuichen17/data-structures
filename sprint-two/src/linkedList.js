@@ -26,11 +26,7 @@ var LinkedList = function() {
          list.head = list.head.next;
          return remove;
 };
-        
-  
 
-
-  
 
   list.contains = function(target) {
      while(list.head !== null){
@@ -59,4 +55,8 @@ var Node = function(value) {
 
 /*
  * Complexity: What is the time complexity of the above functions?
+addTail: O(1) cause finds tail and adds it. Same steps every time.
+removeHead: O(1) 
+contains: O(n) cause worst case it looks through the whole list
+
  */
