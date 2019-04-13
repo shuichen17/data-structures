@@ -37,4 +37,18 @@ describe('binarySearchTree', function() {
     binarySearchTree.depthFirstLog(func);
     expect(array).to.eql([5, 2, 3, 7]);
   });
+
+  it('should insert negative values at the correction location', function() {
+    binarySearchTree.insert(3);
+    binarySearchTree.insert(4);
+    binarySearchTree.insert(-80);
+    binarySearchTree.insert(-50);
+    binarySearchTree.insert(75);
+    binarySearchTree.insert(25);
+    binarySearchTree.insert(89);
+    binarySearchTree.insert(19);
+    expect(binarySearchTree.left.left.right.value).to.equal(-50);
+    expect(binarySearchTree.right.left.left.value).to.equal(19);
+    expect(binarySearchTree.left.left.value).to.equal(-80);
+  });
 });
